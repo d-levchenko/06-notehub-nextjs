@@ -47,6 +47,12 @@ const deleteNote = async (noteId: string): Promise<Note> => {
   return data;
 };
 
-const noteService = { fetchNotes, createNote, deleteNote };
+const fetchNoteById = async (noteId: string): Promise<Note> => {
+  const { data } = await api.get<Note>(`/notes/${noteId}`);
+
+  return data;
+};
+
+const noteService = { fetchNotes, createNote, deleteNote, fetchNoteById };
 
 export default noteService;

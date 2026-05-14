@@ -4,6 +4,7 @@ import noteService from '../../lib/api';
 
 import { useQueryClient } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
+import Link from 'next/link';
 
 interface NoteListProps {
   notes: Note[];
@@ -31,6 +32,9 @@ const NoteList = ({ notes }: NoteListProps) => {
           <p className={css.content}>{elem.content}</p>
           <div className={css.footer}>
             <span className={css.tag}>{elem.tag}</span>
+            <Link className={css.link} href={`/notes/${elem.id}`}>
+              View details
+            </Link>
             <button
               className={css.button}
               onClick={() => handleDelete(elem.id)}
