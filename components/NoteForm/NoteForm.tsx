@@ -67,7 +67,7 @@ const NoteForm = ({ onCancel }: NoteFormProps) => {
             className={css.input}
             as="input"
           />
-          <ErrorMessage name="title" className={css.error} />
+          <ErrorMessage name="title" className={css.error} component="span" />
         </div>
 
         <div className={css.formGroup}>
@@ -79,7 +79,7 @@ const NoteForm = ({ onCancel }: NoteFormProps) => {
             className={css.textarea}
             as="textarea"
           />
-          <ErrorMessage name="content" className={css.error} />
+          <ErrorMessage name="content" className={css.error} component="span" />
         </div>
 
         <div className={css.formGroup}>
@@ -91,7 +91,7 @@ const NoteForm = ({ onCancel }: NoteFormProps) => {
             <option value="Meeting">Meeting</option>
             <option value="Shopping">Shopping</option>
           </Field>
-          <ErrorMessage name="tag" className={css.error} />
+          <ErrorMessage name="tag" className={css.error} component="span" />
         </div>
 
         <div className={css.actions}>
